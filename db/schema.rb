@@ -10,59 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_021645) do
+ActiveRecord::Schema.define(version: 2021_10_06_032307) do
 
-  create_table "complex_addresses", force: :cascade do |t|
-    t.string "street"
-    t.string "street_ext"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.integer "property_complex_id"
-    t.index ["property_complex_id"], name: "index_complex_addresses_on_property_complex_id"
-  end
-
-  create_table "property_complexes", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "resident_vehicles", force: :cascade do |t|
-    t.integer "property_complex_id"
-    t.integer "residents_id"
-    t.string "plate_text"
-    t.string "plate_state"
-    t.string "color"
-    t.string "make"
-    t.string "model"
-    t.index ["property_complex_id"], name: "index_resident_vehicles_on_property_complex_id"
-    t.index ["residents_id"], name: "index_resident_vehicles_on_residents_id"
-  end
-
-  create_table "residents", force: :cascade do |t|
-    t.integer "property_complex_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "middle_initial"
-    t.integer "status"
-    t.date "dob"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["property_complex_id"], name: "index_residents_on_property_complex_id"
-  end
-
-  create_table "work_orders", force: :cascade do |t|
-    t.integer "property_complex_id"
-    t.integer "residents_id"
-    t.string "location"
-    t.string "description"
-    t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["property_complex_id"], name: "index_work_orders_on_property_complex_id"
-    t.index ["residents_id"], name: "index_work_orders_on_residents_id"
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
   end
 
 end
