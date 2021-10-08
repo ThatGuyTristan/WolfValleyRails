@@ -89,6 +89,9 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    jwt (2.3.0)
+    jwt_sessions (2.7.0)
+      jwt (>= 2.2.3, < 3)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -110,6 +113,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
     rack-proxy (0.7.0)
@@ -209,8 +214,10 @@ DEPENDENCIES
   capybara (>= 3.26)
   faker
   jbuilder (~> 2.7)
+  jwt_sessions
   listen (~> 3.3)
   puma (~> 5.0)
+  rack-cors
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
   sass-rails (>= 6)

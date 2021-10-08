@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       log_in user
     else 
       Rails.logger.debug "Log in failed."
+    end
   end
 
   def destroy 
